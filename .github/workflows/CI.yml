@@ -7,7 +7,7 @@ on:
 
 jobs:
   hello:
-  runs-on: macos-latest
-  steps:
-  - name: Env
-    run: echo ${GITHUB_EVENT_NAME}
+    runs-on: macos-latest
+    steps:
+    - name: Env
+      run: echo ${GITHUB_EVENT_NAME}
