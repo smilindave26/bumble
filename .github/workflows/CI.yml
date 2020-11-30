@@ -10,12 +10,12 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Env
-      run: echo ${GITHUB_EVENT_NAME}
+      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }}
 
   release:
     runs-on: macos-latest
     needs: [ hello ]
-    if: ${GITHUB_EVENT_NAME} == 'release'
+    if: github.event_name == 'release'
     steps:
       - name: Do Release
         run: echo "Release"
