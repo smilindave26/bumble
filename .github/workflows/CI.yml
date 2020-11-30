@@ -15,7 +15,7 @@ jobs:
   release:
     runs-on: macos-latest
     needs: [ hello ]
-    if: github.event_name == 'release'
+    if: github.event_name == 'release' && github.event.action == 'published'
     steps:
       - name: Do Release
         run: echo "Release"
