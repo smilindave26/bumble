@@ -22,7 +22,7 @@ jobs:
         echo ${{ steps.release_drafter.outputs.upload_url }}
 
     - name: Make Something
-      run: echo "hello" > hello.txt
+      run: echo "hello tag ${{ steps.release_drafter.outputs.tag_name }}" > hello.txt
 
     - name: Upload it
       uses: actions/upload-release-asset@v1
