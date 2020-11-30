@@ -25,7 +25,7 @@ jobs:
       run: echo "hello tag ${{ steps.release_drafter.outputs.tag_name }}" > hello.txt
 
     - name: Upload it
-      uses: actions/upload-release-asset@v1
+      uses: shogo82148/actions-upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -33,3 +33,4 @@ jobs:
         asset_path: ./hello.txt
         asset_name: hello.txt
         asset_content_type: text/plain
+        overwrite: true
