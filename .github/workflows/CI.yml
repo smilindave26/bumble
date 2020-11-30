@@ -1,16 +1,25 @@
 name: CI
 on:
-  release:
-    types: [ published ]
+  push:
+    branches: [ main ]
   pull_request:
     branches: [ main ]
+  release:
+    types: [ published ]
 
 jobs:
   hello:
     runs-on: macos-latest
     steps:
     - name: Env
-      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }}
+      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }} ${{ github.ref }}
+
+  there:
+    runs-on: macos-latest
+    if: github.event_name == 'push' && github.ref  == 'refs/heads/main'
+    steps:
+    - name: Drafter
+      run: echo "Here's where I'd draft the release and upload assets"
 
   release:
     runs-on: macos-latest
