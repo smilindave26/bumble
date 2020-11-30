@@ -12,11 +12,11 @@ jobs:
     runs-on: macos-latest
     steps:
     - name: Env
-      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }}
+      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }} ${{ github.ref }}
 
   there:
     runs-on: macos-latest
-    if: github.event_name == 'push' && ${GITHUB_REF##*/} == 'main'
+    if: github.event_name == 'push' && github.ref  == 'refs/heads/main'
     steps:
     - name: Drafter
       run: echo "Here's where I'd draft the release and upload assets"
