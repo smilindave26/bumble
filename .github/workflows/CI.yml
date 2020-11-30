@@ -11,3 +11,12 @@ jobs:
     steps:
     - name: Env
       run: echo ${GITHUB_EVENT_NAME}
+
+  release:
+    runs-on: macos-latest
+    needs: [ hello ]
+    if: ${GITHUB_EVENT_NAME} == 'release'
+    steps:
+      - name: Do Release
+        run: echo "Release"
+      
