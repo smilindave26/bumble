@@ -1,11 +1,5 @@
 name: CI
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  release:
-    types: [ published ]
+on: [ push]
 
 jobs:
   hello:
@@ -13,6 +7,8 @@ jobs:
     steps:
     - name: Env
       run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }} ${{ github.ref }}
+    - uses: seanmiddleditch/gha-setup-ninja@master
+    - run: ninja --version
 
   there:
     runs-on: macos-latest
