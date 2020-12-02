@@ -16,6 +16,7 @@ jobs:
     steps:
     - name: Drafter
       run: echo "Here's where I'd draft the release and upload assets"
+    - run: ninja --version
 
   release:
     runs-on: macos-latest
