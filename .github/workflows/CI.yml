@@ -2,15 +2,15 @@ name: CI
 on: [ push ]
 
 jobs:
-  hello:
+  ziti-action:
     runs-on: macos-latest
-    name: A job to say hello
+    name: Test Ziti Action
     steps:
-    - name: Hello world action step
+    - name: Ziti Action 
       id: hello
       uses: smilindave26/ziti-test-action@v0.0.2
       with:
-        who-to-greet: 'Mona the Octocat'
+        who-to-greet: 'Ziggy'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
