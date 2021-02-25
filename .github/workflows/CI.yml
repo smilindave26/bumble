@@ -1,28 +1,16 @@
 name: CI
-on: [ push]
+on: [ push ]
 
 jobs:
   hello:
     runs-on: macos-latest
+    name: A job to say hello
     steps:
-    - name: Env
-      run: echo ${GITHUB_EVENT_NAME} ${{ github.event.action }} ${{ github.ref }}
-    - uses: seanmiddleditch/gha-setup-ninja@master
-    - run: ninja --version
-
-  there:
-    runs-on: macos-latest
-    if: github.event_name == 'push' && github.ref  == 'refs/heads/main'
-    steps:
-    - name: Drafter
-      run: echo "Here's where I'd draft the release and upload assets"
-    - run: ninja --version
-
-  release:
-    runs-on: macos-latest
-    needs: [ hello ]
-    if: github.event_name == 'release' && github.event.action == 'published'
-    steps:
-      - name: Do Release
-        run: echo "Release"
-      
+    - name: Hello world action step
+      id: hello
+      uses: actions/hello-world-javascript-action@v1.1
+      with:
+        who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
