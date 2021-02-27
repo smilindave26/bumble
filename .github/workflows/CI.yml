@@ -7,7 +7,10 @@ jobs:
     name: Test Ziti Action
     steps:
     - name: Ziti Action 
-      id: hello
-      uses: smilindave26/ziti-test-action@v0.0.2
+      id: ziti-action
+      uses: smilindave26/ziti-test-action@v0.0.3
       with:
-        who-to-greet: 'Ziggy'
+        ziti-service: 'ziti-webhook-listener'
+        ziti-id: 'ziggy-todo-as-secret.json'
+        webhook-url: 'https://requestinspector.com/inspect/01ezdtzcnrp6tyaeq03v68t7hf/ziti'
+        webhook-secret: 'todo-get-from-secrets'
