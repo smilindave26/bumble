@@ -8,7 +8,7 @@ jobs:
     steps:
     - name: Ziti Action 
       id: ziti-action
-      uses: smilindave26/ziti-test-action@v0.0.8
+      uses: smilindave26/ziti-test-action@v0.0.9
       with:
         ziti-service: 'ziti-webhook-listener'
         ziti-id: 'ziggy-todo-as-secret.json'
