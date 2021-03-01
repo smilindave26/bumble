@@ -14,5 +14,5 @@ jobs:
         webhook-url: 'https://httpbin.ziti/post'
         webhook-secret: 'todo-get-from-secrets'
       env:
-        ZITI_LOG: 11
-        ZITI_NODEJS_LOG: 11
+        ZITI_LOG: 3
+        ZITI_NODEJS_LOG: 3
