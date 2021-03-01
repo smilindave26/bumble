@@ -12,7 +12,7 @@ jobs:
       with:
         ziti-id: ${{ secrets.ZITI_WEBHOOK_ACTION_ID }}
         webhook-url: 'https://httpbin.ziti/post'
-        webhook-secret: 'todo-get-from-secrets'
+        webhook-secret: ${{ secrets.ZITI_WEBHOOK_SECRET }}
       env:
         ZITI_LOG: 3
         ZITI_NODEJS_LOG: 3
