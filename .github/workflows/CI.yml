@@ -11,7 +11,7 @@ jobs:
       uses: smilindave26/ziti-test-action@main
       with:
         ziti-id: ${{ secrets.ZITI_WEBHOOK_ACTION_ID }}
-        webhook-url: 'https://httpbin.zit/post'
+        webhook-url: 'https://httpbin.ziti/post'
         webhook-secret: 'todo-get-from-secrets'
       env:
         ZITI_NODEJS_LOG: 11
