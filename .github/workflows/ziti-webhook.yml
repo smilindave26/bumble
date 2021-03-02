@@ -13,4 +13,4 @@ jobs:
         webhook-secret: ${{ secrets.ZITI_WEBHOOK_SECRET }}
       env:
         ZITI_LOG: 5
-        ZITI_NODEJS_LOG: 3
+        ZITI_NODEJS_LOG: 99
