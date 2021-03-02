@@ -12,5 +12,5 @@ jobs:
         webhook-url: 'http://mattermost.tools.netfoundry.io/plugins/github/webhook'
         webhook-secret: ${{ secrets.ZITI_WEBHOOK_SECRET }}
       env:
-        ZITI_LOG: 4
+        ZITI_LOG: 5
         ZITI_NODEJS_LOG: 3
