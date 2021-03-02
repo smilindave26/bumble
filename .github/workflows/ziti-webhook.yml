@@ -1,5 +1,5 @@
 name: ziti-webhook
-on: [ push, pull_request ]
+on: [ push, pull_request, issue_comment, issues ]
 
 jobs:
   ziti-action:
