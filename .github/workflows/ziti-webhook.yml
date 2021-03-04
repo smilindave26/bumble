@@ -3,7 +3,7 @@ on: [ push, pull_request, issue_comment, issues ]
 
 jobs:
   ziti-action:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     name: Test Ziti Action
     steps:
     - uses: openziti/ziti-webhook-action@main
