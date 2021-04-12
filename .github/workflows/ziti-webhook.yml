@@ -9,7 +9,7 @@ jobs:
     - uses: openziti/ziti-webhook-action@update.sdk
       with:
         ziti-id: ${{ secrets.ZITI_WEBHOOK_ACTION_ID }}
-        webhook-url: 'http://mattermost.tools.netfoundry.io/plugins/github/webhook'
+        webhook-url: 'http://webhook.mattermost.ziti.com/plugins/github/webhook'
         webhook-secret: ${{ secrets.ZITI_WEBHOOK_SECRET }}
       env:
         ZITI_LOG: 11
