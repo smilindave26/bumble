@@ -6,7 +6,7 @@ jobs:
     runs-on: macos-latest
     name: Test Ziti Action
     steps:
-    - uses: openziti/ziti-webhook-action@content.length
+    - uses: openziti/ziti-webhook-action@update.sddk
       with:
         ziti-id: ${{ secrets.ZITI_WEBHOOK_ACTION_ID }}
         webhook-url: 'http://mattermost.tools.netfoundry.io/plugins/github/webhook'
