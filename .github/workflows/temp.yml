@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: openziti/ziti-mattermost-action-py@main
       if: |
-        github.repository_owner == 'smilindave26' 
+        github.repository_owner == 'not-smilindave26' 
         && ((github.event_name != 'pull_request_review') 
         || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'))
       with:
