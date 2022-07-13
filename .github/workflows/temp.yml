@@ -22,7 +22,7 @@ jobs:
       if: |
         github.repository_owner == 'smilindave26' 
         && ((github.event_name != 'pull_request_review') 
-        || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'()))
+        || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'))
       with:
         zitiId: ${{ secrets.ZITI_MATTERMOST_IDENTITY }}
         webhookUrl: ${{ secrets.ZHOOK_URL }}
