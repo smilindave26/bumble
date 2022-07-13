@@ -1,5 +1,4 @@
 name: mattermost-ziti-webhook
-:wq
 on:
   issues:
   issue_comment:
