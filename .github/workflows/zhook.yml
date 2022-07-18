@@ -1,4 +1,4 @@
-name: ziti-mattermost-action-py
+name: mattermost-ziti-webhook
 on:
   create:
   delete:
@@ -8,26 +8,23 @@ on:
     types: [submitted]
   pull_request_review_comment:
   pull_request:
+    types: [opened, reopened]
   push:
   fork:
   release:
     types: [released]
+  workflow_dispatch:
 
 jobs:
-  ziti-webhook:
+  mattermost-ziti-webhook:
     runs-on: ubuntu-latest
-    name: Ziti Mattermost Action - Py
+    name: POST Webhook
     steps:
-    - uses: smilindave26/ziti-mattermost-action-py@main
-      if: github.event_name != 'pull_request_review'
-      with:
-        zitiId: ${{ secrets.ZITI_MATTERMOST_IDENTITY }}
-        webhookUrl: ${{ secrets.ZHOOK_URL }}
-        eventJson: ${{ toJson(github.event) }}
-        senderUsername: "GitHubZ"
-        destChannel: "@david.hart"
-    - uses: smilindave26/ziti-mattermost-action-py@main
-      if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+    - uses: openziti/ziti-mattermost-action-py@dev
+      if: |
+        github.repository_owner == 'not-smilindave26' 
+        && ((github.event_name != 'pull_request_review') 
+        || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved'))
       with:
         zitiId: ${{ secrets.ZITI_MATTERMOST_IDENTITY }}
         webhookUrl: ${{ secrets.ZHOOK_URL }}
