@@ -3,8 +3,10 @@
 
 import PackageDescription
 
+let version = "0.30.4"
+
 let package = Package(
-    name: "CZiti",
+    name: "ziti-sdk-swift",
     platforms: [
             .macOS(.v10_14), .iOS(.v13)
         ],
@@ -23,7 +25,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .binaryTarget(
             name: "CZiti",
-            url: "https://github.com/openziti/ziti-sdk-swift/releases/download/0.30.4/CZiti.xcframework.zip",
+            url: "https://github.com/openziti/ziti-sdk-swift/releases/download/\(version)/CZiti.xcframework.zip",
             checksum: "7aff82db5fbb23e4d80ab742a10551736d6a349db2e89810b47023c61dcf2edd"
                 ),
     ]
