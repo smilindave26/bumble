@@ -6,7 +6,7 @@ import PackageDescription
 let version = "0.30.4"
 
 let package = Package(
-    name: "ziti-sdk-swift",
+    name: "CZiti",
     platforms: [
             .macOS(.v10_14), .iOS(.v13)
         ],
