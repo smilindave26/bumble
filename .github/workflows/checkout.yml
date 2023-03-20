@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Checkout 
         uses: actions/checkout@v3
-      - run: ls -la
+      - run: ls -la; pwd
 
       - name: Checkout ziti-sdk-swift
         uses: actions/checkout@v3
         with:
           repository: openziti/ziti-sdk-swift
-      - run: ls -la
+      - run: ls -la; pwd
