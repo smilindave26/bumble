@@ -12,10 +12,10 @@ jobs:
           repository: openziti/ziti-sdk-swift
       - run: ls -la
 
-    - name: Get Release
-      id: get_release
-      uses: bruceadams/get-release@v1.3.2
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+      - name: Get Release
+        id: get_release
+        uses: bruceadams/get-release@v1.3.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
-    - run: echo "tag_name: ${{ steps.get_release.outputs.tag_name }}"
+      - run: echo "tag_name: ${{ steps.get_release.outputs.tag_name }}"
