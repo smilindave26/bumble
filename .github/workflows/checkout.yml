@@ -1,0 +1,21 @@
+name: checker
+on:
+  push:
+
+jobs:
+  other-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout ziti-sdk-swift
+        uses: actions/checkout@v3
+        with:
+          repository: openziti/ziti-sdk-swift
+      - run: ls -la
+
+      - name: Get Release
+        id: get_release
+        uses: bruceadams/get-release@v1.3.2
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - run: echo ${{ steps.get_release.outputs.tag_name }}
