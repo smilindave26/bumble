@@ -8,8 +8,6 @@ jobs:
     steps:
       - name: Checkout ziti-sdk-swift
         uses: actions/checkout@v3
-        with:
-          repository: openziti/ziti-sdk-swift
       - run: ls -la
 
       - name: Get Release
